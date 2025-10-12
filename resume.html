@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Tyler Michael Smith</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e90ff;
+            --dark: #2d3748;
+            --gray: #718096;
+            --light-gray: #e2e8f0;
+            --white: #ffffff;
+            --bg: #4a90e2;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--bg);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            background: white;
+            border-radius: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--gray);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--dark);
+        }
+
+        /* Resume Layout */
+        .resume-wrapper {
+            padding: 8rem 3rem 3rem;
+        }
+
+        .resume-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 3rem;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-section {
+            margin-bottom: 3rem;
+        }
+
+        .sidebar-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 600;
+        }
+
+        .sidebar-section .icon {
+            font-size: 1.5rem;
+        }
+
+        .about-text {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-item .icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item a:hover {
+            opacity: 1;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .skills-list li:last-child {
+            border-bottom: none;
+        }
+
+        .education-content {
+            font-size: 0.9rem;
+        }
+
+        .education-content strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-content div {
+            opacity: 0.9;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .section-title .icon {
+            font-size: 1.8rem;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            margin-bottom: 3rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: var(--light-gray);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.45rem;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .timeline-date {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background: #e3f2fd;
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .timeline-item .company {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .timeline-item .subtitle {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .timeline-item li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .timeline-item li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .resume-container {
+                grid-template-columns: 350px 1fr;
+            }
+
+            .main-content {
+                padding: 3rem;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .resume-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                padding: 3rem 2rem;
+            }
+
+            .main-content {
+                padding: 2rem;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline-item::before {
+                left: -2.45rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-content {
+                padding: 1rem 2rem;
+                border-radius: 20px;
+                margin: 0 1rem;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                left: 1rem;
+                right: 1rem;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                border-radius: 20px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                opacity: 0;
+                transition: all 0.3s;
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .resume-wrapper {
+                padding: 7rem 1.5rem 2rem;
+            }
+
+            .resume-container {
+                border-radius: 20px;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <div class="logo-circle">T</div>
+                <span class="logo-text">Tyler Smith</span>
+            </a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">About Me</a></li>
+                <li><a href="resume.html" class="active">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="resume-wrapper">
+        <div class="resume-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="profile-section">
+                    <img src="profile.jpg" alt="Tyler Michael Smith" class="profile-image">
+                </div>
+
+                <div class="sidebar-section">
+                    <h2><span class="icon">👤</span> About Me</h2>
+                    <p class="about-text">
+                        Early-career marketing professional (Class of 2023) with proven ability to drive results in
+                        fast-paced environments. Quickly advanced from intern to marketing coordinator, generating
+                        significant partnership revenue and building systems that increased team efficiency by 85%.
+                        Strong foundation in CRM, lead generation, and strategic partnerships across sports and
+                        entertainment industries.
+                    </p>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2><span class="icon">📧</span> Contact</h2>
+                    <div class="contact-item">
+                        <span class="icon">📱</span>
+                        <a href="tel:3109917389">(310) 991-7389</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">✉️</span>
+                        <a href="mailto:tylermsmith0708@gmail.com">tylermsmith0708@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">💼</span>
+                        <a href="https://linkedin.com/in/tyler-smith" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📍</span>
+                        <span>Los Angeles, CA</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2><span class="icon">⚙️</span> Core Skills</h2>
+                    <ul class="skills-list">
+                        <li>Partnership Development & Relationship Management</li>
+                        <li>CRM Systems (Salesforce, HubSpot)</li>
+                        <li>Lead Generation & Outreach Strategy</li>
+                        <li>Social Media Marketing & Content Strategy</li>
+                        <li>Pitch Presentations & Stakeholder Communication</li>
+                        <li>Data Analysis & Performance Tracking</li>
+                        <li>Brand Strategy & Market Positioning</li>
+                        <li>Campaign Management & Execution</li>
+                        <li>Microsoft Office & Google Workspace</li>
+                        <li>Canva, Adobe Creative Suite (Basic)</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2><span class="icon">🎓</span> Education</h2>
+                    <div class="education-content">
+                        <strong>San Jose State University</strong>
+                        <div>B.S. in Business Administration - Marketing</div>
+                        <div>Graduated: May 2023</div>
+                        <div style="margin-top: 0.8rem; opacity: 0.85; font-size: 0.85rem;">Relevant Coursework:
+                            Marketing Strategy, Consumer Behavior, Digital Marketing, Sales Management, Market Research
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div class="section-title"><span class="icon">💼</span> Experience</div>
+                <div class="section-divider"></div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jan 2024 - Present</div>
+                        <h3>Marketing Coordinator</h3>
+                        <div class="subtitle"><span class="company">Sanders Sports & Entertainment</span> • Los Angeles,
+                            CA</div>
+                        <ul>
+                            <li>Built comprehensive Salesforce CRM database from scratch, organizing 1,000+ brand
+                                contacts and implementing tracking systems that increased team efficiency by 85% within
+                                first 6 months</li>
+                            <li>Developed and presented strategic pitch decks to major brands including Nike, Gatorade,
+                                and regional sponsors, highlighting athlete marketability and social reach (5M+ combined
+                                followers) for 12+ professional athletes</li>
+                            <li>Supported partnership negotiations contributing to $500K+ in new endorsement deals
+                                during first year, assisting senior team with contract development and brand
+                                relationship management</li>
+                            <li>Coordinated high-profile client logistics during Super Bowl LVIII week, managing 20+
+                                appearance bookings and media opportunities that generated 2M+ social media impressions
+                            </li>
+                            <li>Created go-to-market strategies for newly signed athletes, identifying sponsorship
+                                opportunities in untapped categories and developing personalized brand positioning
+                                frameworks</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jun 2023 - Dec 2023</div>
+                        <h3>Marketing Intern - Creator Partnerships</h3>
+                        <div class="subtitle"><span class="company">Spring Inc.</span> • San Jose, CA</div>
+                        <ul>
+                            <li>Identified and onboarded 50+ social media creators (50K-500K followers) through
+                                strategic outreach across Instagram, TikTok, and YouTube, exceeding intern targets by
+                                150%</li>
+                            <li>Supported promotional campaigns for 15+ influencer merchandise stores, contributing to
+                                $75K+ in revenue during 6-month internship period</li>
+                            <li>Analyzed social media trends and engagement data to optimize posting schedules and
+                                content strategy, helping partners achieve 40% average engagement increase</li>
+                            <li>Managed day-to-day campaign execution including content calendar development,
+                                promotional scheduling, and basic performance tracking across platforms</li>
+                            <li>Collaborated with senior marketing team to develop standardized creator onboarding
+                                process, which reduced activation time by 50% and became team template</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Mar 2022 - Present</div>
+                        <h3>Head Assistant Coach & Marketing Volunteer</h3>
+                        <div class="subtitle"><span class="company">South Central Kings Baseball Academy</span> •
+                            Inglewood, CA</div>
+                        <ul>
+                            <li>Joined founding team of nonprofit providing free baseball instruction to 100+
+                                underserved youth annually in South Los Angeles, demonstrating commitment to community
+                                impact</li>
+                            <li>Coach 18-player competitive travel team, providing position-specific training and
+                                mentoring student-athletes on college recruitment preparation</li>
+                            <li>Developed social media marketing strategy that grew organization's Instagram following
+                                from 0 to 3,500+ in 18 months, increasing program visibility and applications by 120%
+                            </li>
+                            <li>Assisted in securing $25K+ in local business sponsorships by creating promotional
+                                materials and supporting fundraising presentations to community partners</li>
+                            <li>Manage content creation and posting schedule to promote team achievements, recruit
+                                volunteers, and engage with local baseball community</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Summer 2022</div>
+                        <h3>Marketing & Operations Assistant (Intern)</h3>
+                        <div class="subtitle"><span class="company">Wasserman Sports Agency</span> • Los Angeles, CA
+                        </div>
+                        <ul>
+                            <li>Supported daily operations for premier sports marketing agency representing professional
+                                athletes across NFL, NBA, and MLB</li>
+                            <li>Coordinated training schedules and facility logistics for 10+ NFL Draft prospects during
+                                pre-draft preparation period</li>
+                            <li>Built professional network with sports agents, athletes, and industry executives,
+                                gaining exposure to high-level contract negotiations and partnership development</li>
+                            <li>Assisted in preparation of marketing materials and client presentations for brand
+                                partnership meetings</li>
+                            <li>Gained foundational knowledge of sports marketing industry, athlete representation, and
+                                endorsement deal structures that informed career direction</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020 - 2022</div>
+                        <h3>Sales Associate</h3>
+                        <div class="subtitle"><span class="company">24 Hour Fitness</span> • San Jose, CA</div>
+                        <ul>
+                            <li>Consistently exceeded monthly sales targets by 25%+ while balancing full-time college
+                                coursework, ranking in top 15% of regional sales team</li>
+                            <li>Generated $90K+ in annual membership revenue through consultative sales approach,
+                                personalized fitness assessments, and relationship building</li>
+                            <li>Maintained 88% customer retention rate by conducting follow-up consultations and
+                                proactively addressing member concerns</li>
+                            <li>Developed lead generation skills through walk-ins, referral programs, and community
+                                outreach that increased qualified prospect pipeline by 30%</li>
+                            <li>Learned foundational sales skills including objection handling, relationship management,
+                                and conversion optimization that directly apply to marketing career</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
