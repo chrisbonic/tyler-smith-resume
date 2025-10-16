@@ -8,8 +8,10 @@
     <!-- Primary Meta Tags for SEO -->
     <title>Contact Tyler Michael Smith | Marketing Professional in Los Angeles</title>
     <meta name="title" content="Contact Tyler Michael Smith | Marketing Professional in Los Angeles">
-    <meta name="description" content="Get in touch with Tyler Michael Smith, a Class of 2023 marketing professional with expertise in partnerships, CRM, and campaign management. Open to marketing coordinator and partnership specialist roles in Los Angeles, CA.">
-    <meta name="keywords" content="Tyler Smith contact, marketing professional Los Angeles, partnership specialist, CRM specialist, marketing coordinator, business development, USC Annenberg graduate">
+    <meta name="description"
+        content="Get in touch with Tyler Michael Smith, a Class of 2023 marketing professional with expertise in partnerships, CRM, and campaign management. Open to marketing coordinator and partnership specialist roles in Los Angeles, CA.">
+    <meta name="keywords"
+        content="Tyler Smith contact, marketing professional Los Angeles, partnership specialist, CRM specialist, marketing coordinator, business development, USC Annenberg graduate">
     <meta name="author" content="Tyler Michael Smith">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
@@ -22,7 +24,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tylersmith.com/contact.html">
     <meta property="og:title" content="Contact Tyler Michael Smith | Marketing Professional">
-    <meta property="og:description" content="Marketing professional seeking opportunities in partnerships, CRM, and campaign management. Open to full-time marketing roles in Los Angeles.">
+    <meta property="og:description"
+        content="Marketing professional seeking opportunities in partnerships, CRM, and campaign management. Open to full-time marketing roles in Los Angeles.">
     <meta property="og:image" content="https://tylersmith.com/images/og-image.jpg">
     <meta property="og:site_name" content="Tyler Michael Smith Portfolio">
     <meta property="og:locale" content="en_US">
@@ -31,7 +34,8 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://tylersmith.com/contact.html">
     <meta property="twitter:title" content="Contact Tyler Michael Smith | Marketing Professional">
-    <meta property="twitter:description" content="Marketing professional seeking opportunities in partnerships, CRM, and campaign management. Open to full-time marketing roles in Los Angeles.">
+    <meta property="twitter:description"
+        content="Marketing professional seeking opportunities in partnerships, CRM, and campaign management. Open to full-time marketing roles in Los Angeles.">
     <meta property="twitter:image" content="https://tylersmith.com/images/twitter-card.jpg">
 
     <!-- Structured Data (JSON-LD) for AEO -->
@@ -315,6 +319,26 @@
             color: var(--primary);
         }
 
+        /* CTA block (reused from Home) */
+        .cta-block {
+            margin: 2.5rem 0;
+            padding: clamp(1rem, 3vw, 1.75rem);
+            border-radius: 16px;
+            background: linear-gradient(180deg, rgba(15, 98, 254, 0.06), rgba(15, 98, 254, 0.02));
+            border: 1px solid rgba(15, 98, 254, 0.12);
+        }
+
+        .cta-block h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+        }
+
+        .cta-block p {
+            margin: 0 0 1rem 0;
+            color: var(--text-muted, #4b5563);
+            max-width: 65ch;
+        }
+
         /* Contact Form */
         .form-group {
             margin-bottom: 1.5rem;
@@ -511,7 +535,8 @@
             <ul class="nav-menu" role="menubar">
                 <li role="none"><a href="index.html" role="menuitem">About Me</a></li>
                 <li role="none"><a href="resume.html" role="menuitem">Resume</a></li>
-                <li role="none"><a href="contact.html" class="active" role="menuitem" aria-current="page">Contact</a></li>
+                <li role="none"><a href="contact.html" class="active" role="menuitem" aria-current="page">Contact</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -520,10 +545,19 @@
         <section class="contact-section" itemscope itemtype="https://schema.org/ContactPage">
             <div class="contact-container">
                 <header class="contact-header">
-                    <h1 itemprop="name">Let's Connect</h1>
-                    <p itemprop="description">Class of 2023 marketing professional seeking opportunities to leverage proven skills in partnerships,
-                        CRM, and campaign management. Open to full-time marketing roles where I can contribute immediately
-                        and continue growing.</p>
+                    <h1 itemprop="name">Let’s Talk Business Development & Growth</h1>
+                    <p itemprop="description">Business Development and GTM professional open to full-time roles in
+                        partnerships, CRM, and sales enablement. Passionate
+                        about helping organizations grow their pipeline through data-driven marketing and
+                        relationship-building.
+                    </p><br />
+
+                    <p itemprop="description">
+                        Open to business development, partnerships, or marketing roles. Available for full-time
+                        positions and relocation. I
+                        typically respond within 24 hours.
+                    </p>
+
                 </header>
 
                 <div class="contact-grid">
@@ -531,10 +565,19 @@
                     <article class="contact-card" itemscope itemtype="https://schema.org/Person">
                         <h2 class="card-title">Get In Touch</h2>
                         <p class="card-subtitle">Open to marketing coordinator, partnership specialist, or business
-                            development roles. Available for full-time positions and open to relocation. I typically respond
+                            development roles. Available for full-time positions and open to relocation. I typically
+                            respond
                             within 24 hours.</p>
 
                         <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-icon" aria-label="LinkedIn">💼</div>
+                                <div class="contact-item-content">
+                                    <h3>LinkedIn</h3>
+                                    <a href="https://linkedin.com/in/tyler-smith" target="_blank" rel="noopener noreferrer" itemprop="sameAs"
+                                        aria-label="View Tyler Smith's LinkedIn profile">View Profile</a>
+                                </div>
+                            </div>
                             <div class="contact-item" itemprop="telephone">
                                 <div class="contact-icon" aria-label="Phone">📱</div>
                                 <div class="contact-item-content">
@@ -547,83 +590,40 @@
                                 <div class="contact-icon" aria-label="Email">✉️</div>
                                 <div class="contact-item-content">
                                     <h3>Email</h3>
-                                    <a href="mailto:tylermsmith0708@gmail.com" itemprop="email">tylermsmith0708@gmail.com</a>
+                                    <a href="mailto:tylermsmith0708@gmail.com"
+                                        itemprop="email">tylermsmith0708@gmail.com</a>
                                 </div>
                             </div>
-
-                            <div class="contact-item" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                                <div class="contact-icon" aria-label="Location">📍</div>
-                                <div class="contact-item-content">
-                                    <h3>Location</h3>
-                                    <span itemprop="addressLocality">Los Angeles</span>, <span itemprop="addressRegion">California</span>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="contact-icon" aria-label="LinkedIn">💼</div>
-                                <div class="contact-item-content">
-                                    <h3>LinkedIn</h3>
-                                    <a href="https://linkedin.com/in/tyler-smith" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="View Tyler Smith's LinkedIn profile">View Profile</a>
-                                </div>
-                            </div>
+                         
                         </div>
                     </article>
 
                     <!-- Contact Form -->
                     <article class="contact-card">
-                        <h2 class="card-title">Send a Message</h2>
-                        <div class="success-message" id="successMessage" role="alert" aria-live="polite">
-                            Thank you! Your message has been sent successfully.
-                        </div>
-                        <form id="contactForm" onsubmit="handleSubmit(event)" aria-label="Contact form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="name">Name *</label>
-                                    <input type="text" id="name" name="name" required aria-required="true" autocomplete="name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email *</label>
-                                    <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
-                                </div>
-                            </div>
+                        <h2 class="card-title">I'm seeking to join a team and culture where business development, sales, & partnerships meets creative growth.</h2>
+ 
+                        <!-- Contact CTA (no form) -->
+                        <section class="cta-block" aria-labelledby="ctaTitle">
+                 
+                            <p>Let’s discuss how my experience in sales enablement, partnerships, and GTM execution can
+                                help your organization
+                                grow.</p>
 
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="company">Company</label>
-                                    <input type="text" id="company" name="company" autocomplete="organization">
+                                <h2>Based in Los Angeles</h2>
+                                <p>Open to opportunities in the Los Angeles area and willing to relocate for the right position.</p>
+                                <div class="location-badge">
+                                    <span aria-label="Location pin">📍</span>
+                                    Los Angeles, California
                                 </div>
-                                <div class="form-group">
-                                    <label for="phone">Phone</label>
-                                    <input type="tel" id="phone" name="phone" autocomplete="tel">
-                                </div>
-                            </div>
+                           
+                        </section>
 
-                            <div class="form-group">
-                                <label for="subject">Subject *</label>
-                                <input type="text" id="subject" name="subject" required aria-required="true">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" name="message" required aria-required="true"></textarea>
-                            </div>
-
-                            <button type="submit" class="submit-btn" aria-label="Send message">Send Message</button>
-                        </form>
                     </article>
                 </div>
 
-                <!-- Location Card -->
-                <article class="map-card">
-                    <h2>Based in Los Angeles</h2>
-                    <p>Open to opportunities in the Los Angeles area and willing to relocate for the right position.</p>
-                    <div class="location-badge">
-                        <span aria-label="Location pin">📍</span>
-                        Los Angeles, California
-                    </div>
-                </article>
             </div>
         </section>
+
     </main>
 
     <script>
@@ -662,7 +662,7 @@
         }
 
         // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const menu = document.querySelector('.nav-menu');
             const toggle = document.querySelector('.menu-toggle');
 
@@ -672,7 +672,7 @@
         });
 
         // Add keyboard support for menu toggle
-        document.querySelector('.menu-toggle').addEventListener('keypress', function(event) {
+        document.querySelector('.menu-toggle').addEventListener('keypress', function (event) {
             if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
                 toggleMenu();
